@@ -1,38 +1,38 @@
-import React from 'react'
-import { Button, StyleSheet, Text, useColorScheme } from 'react-native'
+import React, { useState } from 'react'
+import { StyleSheet, Text, View} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { FloatingButton } from '../components/FloatingButton'
+import { AddModal } from '../components/AddModal'
 
-export const Home = ({ navigation }: any) => {
+export const Home = () => {
 
-    const colorScheme = useColorScheme()
-
-    const themeTextStyle = colorScheme === 'light' ? styles.light : styles.dark;
+    const [nota, setNota] = useState('')
+    const [open, setOpen] = useState<boolean>(false)
 
   return (
-    <SafeAreaView style={[styles.container, themeTextStyle]}>
-        <Text>Home</Text>
-        <Button
-            title='Go'
-            onPress={() => navigation.navigate('Second', {
-                name: 'Ezequiel',
-                lastname: 'Monaco',
-                age: 21
-            })}
-        >
-        </Button>
+    <SafeAreaView style={styles.mainContainer}>
+        {/* <View style={styles.container}>
+            <Text style={styles.title}>to deishon</Text>
+        </View>
+        <FloatingButton onPress={() => setNota}/> */}
+        <AddModal/>
     </SafeAreaView>
   )
 }
 
-
 const styles = StyleSheet.create({
-    container: {    
+    mainContainer: {
         flex: 1,
+        backgroundColor: '#0B102C',
+        paddingHorizontal: 20,
+        paddingVertical: 20
     },
-    light: {
-        backgroundColor: 'white',
+    title: {
+        fontSize: 30,
+        color: 'white'
     },
-    dark: {
-        backgroundColor: 'black',
+    container: {
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 })
