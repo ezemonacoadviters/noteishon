@@ -1,29 +1,29 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
-import Touchable from './Touchable';
 
 interface Props {
     onPress: () => void
+    containerStyle?: any
 }
 
 export const FloatingButton = (props: Props) => {
   return (
-    <View>
-        <Touchable onPress={props.onPress}>
+    <View style={props.containerStyle}>
+        <TouchableOpacity onPress={props.onPress}>
             <View style={styles.container}>  
-                <AntDesign name="plus" size={50} color="black" />
+                <AntDesign name="plus" size={30} color="white" />
             </View>
-        </Touchable>
+        </TouchableOpacity>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
     container: {
-        width: 70,
-        height: 70,
-        backgroundColor: 'white',
+        width: 60,
+        height: 60,
+        backgroundColor: '#3AAFFF',
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center'

@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Modal, TouchableOpacity, StyleSheet, Dimensions, Alert, TextInput, Button, Text } from 'react-native';
-import Touchable from './Touchable';
 
 interface Props {
     onPress: () => void,
@@ -17,8 +16,8 @@ export const AddModal = (props: Props) => {
         >
             <TouchableOpacity activeOpacity={1} style={styles.modalBackground} onPress={props.onClose}>
                 <View style={styles.modalContainer}>
-                    <TextInput placeholder='Agrega una tarea...'/>
-                    <Touchable onPress={props.onPress}>
+                    <TextInput placeholder='Agrega una tarea...' style={styles.textInput}/>
+                    <TouchableOpacity onPress={props.onPress}>
                         <View style={{
                             width: 30,
                             height: 30,
@@ -29,7 +28,7 @@ export const AddModal = (props: Props) => {
                         }}>
                             <Text style={{ color: 'white'}}>+</Text>
                         </View>
-                    </Touchable>
+                    </TouchableOpacity>
                 </View>
             </TouchableOpacity>
         </Modal>
@@ -52,6 +51,12 @@ const styles = StyleSheet.create({
         padding: 20,
         flexDirection: 'row',
         justifyContent: 'space-between'
+    },
+    textInput: {
+        borderWidth: 2,
+        width: 350,
+        height: 50
+
     }
 });
 
