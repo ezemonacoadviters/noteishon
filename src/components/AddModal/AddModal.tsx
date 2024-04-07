@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { View, Modal, TouchableOpacity, StyleSheet, Dimensions, Alert, TextInput, Button, Text } from 'react-native';
 
 interface Props {
@@ -9,14 +9,14 @@ interface Props {
 export const AddModal = (props: Props) => {
     return (
         <Modal
-            animationType="slide"
+            animationType="fade"
             transparent={true}
             visible={props.visible}
             onRequestClose={props.onClose}
         >
             <TouchableOpacity activeOpacity={1} style={styles.modalBackground} onPress={props.onClose}>
                 <View style={styles.modalContainer}>
-                    <TextInput placeholder='Agrega una tarea...' style={styles.textInput}/>
+                    <TextInput placeholder='Agrega una tarea...'/>
                     <TouchableOpacity onPress={props.onPress}>
                         <View style={{
                             width: 30,
@@ -52,11 +52,5 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
-    textInput: {
-        borderWidth: 2,
-        width: 350,
-        height: 50
-
-    }
 });
 

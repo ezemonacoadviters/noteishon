@@ -1,19 +1,32 @@
-import React from 'react'
-import { Layout } from '../../components/Layout/Layout'
-import { ScrollView, View } from 'react-native'
-import { FloatingButton } from '../../components/FAB/FloatingButton'
+import React, { useState } from 'react'
+import { AddLayout } from '../../components/Layout/AddLayout'
+import { StyleSheet, View } from 'react-native'
+import { Card } from '../../components/Card/Card'
+
+import { tasks } from '../../../data.json'
 
 export const Home = () => {
   return (
-    <Layout title='To-Do'>
-        <View style={{
-            flex: 1,
-            justifyContent: 'flex-end',
-            alignItems: 'flex-end'
-        }}>
-            <FloatingButton onPress={() => {}}/>
+    <AddLayout
+        title='To-Do'
+    >
+        <View style={styles.tasksContainer}>
+            {tasks.map((item) => (
+                <Card
+                    key={item.id}
+                    text={item.text}
+                    onDelete={() => {}}
+                />
+            ))}       
         </View>
-    </Layout>
+    </AddLayout>
   )
 }
 
+const styles = StyleSheet.create({
+    tasksContainer: {
+        marginTop: 20,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+})
