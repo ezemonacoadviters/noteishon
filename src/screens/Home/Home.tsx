@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native'
 import { Card } from '../../components/Card/Card'
 
 import { tasks } from '../../../data.json'
+import { DeleteModal } from '../../components/DeleteModal/DeleteModal'
 
 export const Home = () => {
   return (
@@ -15,9 +16,10 @@ export const Home = () => {
                 <Card
                     key={item.id}
                     text={item.text}
-                    onDelete={() => {}}
+                    onDelete={() => console.log('Delete')}
+                    onEdit={() => console.log('Edit')}
                 />
-            ))}       
+            ))}
         </View>
     </AddLayout>
   )

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { View, Modal, TouchableOpacity, StyleSheet, Dimensions, Alert, TextInput, Button, Text } from 'react-native';
 
 interface Props {
@@ -7,6 +7,9 @@ interface Props {
     visible: boolean
 }
 export const AddModal = (props: Props) => {
+
+    const [taskText, setTaskText] = useState('')
+
     return (
         <Modal
             animationType="fade"
@@ -16,7 +19,10 @@ export const AddModal = (props: Props) => {
         >
             <TouchableOpacity activeOpacity={1} style={styles.modalBackground} onPress={props.onClose}>
                 <View style={styles.modalContainer}>
-                    <TextInput placeholder='Agrega una tarea...'/>
+                    <TextInput 
+                    placeholder='Agrega una tarea...'
+                    onChangeText={(text) => setTaskText(text)}
+                    />
                     <TouchableOpacity onPress={props.onPress}>
                         <View style={{
                             width: 30,

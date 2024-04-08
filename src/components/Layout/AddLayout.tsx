@@ -26,7 +26,7 @@ export const AddLayout = (props: Props) => {
             {props.children}
         </ScrollView>
         <FloatingButton
-            onPress={() => {}}
+            onPress={handleOpenModal}
             containerStyle={styles.floattingButton}
         />
         <AddModal

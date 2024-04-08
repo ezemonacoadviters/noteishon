@@ -3,22 +3,6 @@
         { 
             "id": 1,
             "text": "Hacer la tarea de la semana"
-        },
-        { 
-            "id": 2,
-            "text": "Sacar a pasear al perro"
-        },
-        { 
-            "id": 3,
-            "text": "Comprar papa fritas"
-        },
-        { 
-            "id": 4,
-            "text": "Codear un poco"
-        },
-        { 
-            "id": 5,
-            "text": "Empezar tarea de Programación Nº1 con compañeros de la facultad, preguntar a Vazquez por PDF"
         }
     ]
   }

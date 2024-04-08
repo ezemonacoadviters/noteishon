@@ -9,6 +9,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 interface Props {
     text: string
     onDelete: () => void
+    onEdit: () => void
     key: Key
 }
 
@@ -21,12 +22,12 @@ export const Card = (props: Props) => {
             </Text>
         </View>
         <View style={styles.actionsContainer}>
-            <Pressable onPress={() => {}}>
+            <Pressable onPress={props.onEdit}>
                 <View style={styles.editContainer}>
                     <Feather name="edit-2" size={20} color="white" />
                 </View>
             </Pressable>
-            <Pressable>
+            <Pressable onPress={props.onDelete}>
                 <View style={styles.deleteContainer}>
                     <MaterialIcons name="delete" size={24} color="white" />
                 </View>
